@@ -469,7 +469,8 @@ class mod_attendance_renderer extends plugin_renderer_base {
             }
 
             $options = array(mod_attendance_sessions_page_params::ACTION_DELETE_SELECTED => get_string('delete'),
-                mod_attendance_sessions_page_params::ACTION_CHANGE_DURATION => get_string('changeduration', 'attendance'));
+                mod_attendance_sessions_page_params::ACTION_CHANGE_DURATION => get_string('changeduration', 'attendance'),
+                mod_attendance_sessions_page_params::ACTION_PDF_QR_REPORT => get_string('qrcode', 'attendance'));
 
             $controls = html_writer::select($options, 'action');
             $attributes = array(

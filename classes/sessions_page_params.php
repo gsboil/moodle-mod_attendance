@@ -61,6 +61,11 @@ class mod_attendance_sessions_page_params {
      */
     const ACTION_DELETE_HIDDEN     = 6;
 
+    /**
+     *  Make a PDF of Session QR codes
+     */
+    const ACTION_PDF_QR_REPORT     = 7;
+
     /** @var int view mode of taking attendance page*/
     public $action;
 }

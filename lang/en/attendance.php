@@ -416,6 +416,7 @@ $string['processingfile'] = 'Processing file';
 $string['qr_cookie_error'] = 'QR session has expired.';
 $string['qr_pass_wrong'] = 'QR password is wrong or has expired.';
 $string['qrcode'] = 'QR Code';
+$string['qrcodes'] = 'QR Codes';
 $string['randompassword'] = 'Random password';
 $string['remark'] = 'Remark for: {$a}';
 $string['remarks'] = 'Remarks';

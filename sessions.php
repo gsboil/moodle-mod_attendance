@@ -24,6 +24,7 @@
 
 require_once(dirname(__FILE__).'/../../config.php');
 require_once(dirname(__FILE__).'/locallib.php');
+require_once(dirname(__FILE__).'/qr_passwords.php');
 require_once($CFG->dirroot.'/lib/formslib.php');
 
 $pageparams = new mod_attendance_sessions_page_params();
@@ -213,6 +214,12 @@ switch ($att->pageparams->action) {
         echo $OUTPUT->heading(get_string('attendanceforthecourse', 'attendance').' :: ' .format_string($course->fullname));
         echo $OUTPUT->confirm($message, $att->url_sessions($params), $att->url_manage());
         echo $OUTPUT->footer();
+        exit;
+    case mod_attendance_sessions_page_params::ACTION_PDF_QR_REPORT:
+        $course_shortname = $course->shortname. ": ".$att->name;
+        $course_fullname = $course->fullname;
+        $sessid = optional_param_array('sessid', '', PARAM_SEQUENCE);
+        attendance_exportqrtopdf($course_shortname, $course_fullname, $sessid, $course_shortname."-qrcodes");
         exit;
 }
 

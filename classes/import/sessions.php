@@ -102,7 +102,7 @@ class sessions {
             get_string('repeatevery', 'attendance'),
             get_string('repeatuntil', 'attendance'),
             get_string('studentscanmark', 'attendance'),
-            get_string('passwordgrp', 'attendance'),
+            get_string('studentpassword', 'attendance'),
             get_string('randompassword', 'attendance'),
             get_string('subnet', 'attendance'),
             get_string('automark', 'attendance'),
@@ -143,7 +143,7 @@ class sessions {
                 'repeatevery' => $data->header7,
                 'repeatuntil' => $data->header8,
                 'studentscanmark' => $data->header9,
-                'passwordgrp' => $data->header10,
+                'studentpassword' => $data->header10,
                 'randompassword' => $data->header11,
                 'subnet' => $data->header12,
                 'automark' => $data->header13,
@@ -167,7 +167,7 @@ class sessions {
                 'repeatevery' => 7,
                 'repeatuntil' => 8,
                 'studentscanmark' => 9,
-                'passwordgrp' => 10,
+                'studentpassword' => 10,
                 'randompassword' => 11,
                 'subnet' => 12,
                 'automark' => 13,
@@ -298,7 +298,7 @@ class sessions {
             $session->sdescription['text'] = '<p>' . $this->get_column_data($row, $mapping['description']) . '</p>';
             $session->sdescription['format'] = FORMAT_HTML;
             $session->sdescription['itemid'] = 0;
-            $session->passwordgrp = $this->get_column_data($row, $mapping['passwordgrp']);
+            $session->studentpassword = $this->get_column_data($row, $mapping['studentpassword']);
             $session->subnet = $this->get_column_data($row, $mapping['subnet']);
             // Set session subnet restriction. Use the default activity level subnet if there isn't one set for this session.
             if (empty($session->subnet)) {
